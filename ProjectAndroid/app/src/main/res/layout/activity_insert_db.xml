@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".activity.InsertDB">
+
+    <EditText
+        android:id="@+id/editnamesps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Tên sản phẩm"
+         />
+
+    <EditText
+        android:id="@+id/editgiasps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Giá"
+        android:inputType="number"
+        />
+
+    <EditText
+        android:id="@+id/edithinhssp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hình ảnh"
+        android:ems="10"
+        android:inputType="textPersonName"
+      />
+
+    <EditText
+        android:id="@+id/editmotassp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Mô tả"
+        android:inputType="textPersonName"
+       />
+
+    <EditText
+        android:id="@+id/editloaissp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="loại sản phẩm"
+        android:inputType="number"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnasdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thêm" />
+
+        <Button
+            android:id="@+id/btnhomses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Trở về" />
+
+    </LinearLayout>
+</LinearLayout>

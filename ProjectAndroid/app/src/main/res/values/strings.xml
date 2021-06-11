@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">APP BAN HANG ONLINE</string>
+    <string name="title_activity_bottomenu">bottomenu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_map">Map</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+</resources>
