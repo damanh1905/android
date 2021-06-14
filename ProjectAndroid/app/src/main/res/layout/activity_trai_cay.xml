@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgroud"
+   android:background="@color/whiteTextColor"
     tools:context=".activity.DienThoaiActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarTraiCay"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0029F7"
+        android:background="@color/themeColor"
         app:titleTextColor="#FFFFFF"
+
         app:title="Trái Cây"
         >
 

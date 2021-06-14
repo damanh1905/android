@@ -10,4 +10,5 @@ public class Server {
     public static String insertDB = "http://" + localhost + "/server/insertDB.php";
     public static String getuser = "http://" + localhost + "/server/getuser.php";
     public static String insertuser = "http://" + localhost + "/server/insertUser.php";
+    public static String getsanphamtheohang= "http://" + localhost + "/server/getsanphamtheohang.php?page=";
 }

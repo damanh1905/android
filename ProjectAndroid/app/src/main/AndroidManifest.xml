@@ -23,14 +23,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activity.loginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-
-        </activity>
+        <activity android:name=".activity.hangdelllaptopMainActivity"></activity>
+        <activity android:name=".activity.hangsamsungActivity" />
+        <activity android:name=".activity.Account" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.loginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.FragmentUpdateActivity"
             tools:ignore="Instantiatable,MissingClass" />
@@ -55,11 +56,7 @@
         <activity
             android:name=".activity.bottomenu"
             android:label="@string/title_activity_bottomenu"
-            tools:ignore="MissingClass" >
-
-
-
-        </activity>
+            tools:ignore="MissingClass" />
         <activity android:name=".activity.ThongtindonhangActivity" />
         <activity android:name=".activity.ThongTinKhachHangActivity" />
         <activity android:name=".activity.GioHangActivity" />

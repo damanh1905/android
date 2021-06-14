@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteTextColor"
+    tools:context=".activity.hangdelllaptopMainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarhanglaptop"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/themeColor"
+        app:titleTextColor="#FFFFFF"
+
+        app:title="Lap Top Dell"
+        >
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productSearchhanglaptop"
+        android:iconifiedByDefault="false"
+        android:queryHint="tìm kiếm"/>
+    <ListView
+        android:id="@+id/lvhanglaptopdell"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

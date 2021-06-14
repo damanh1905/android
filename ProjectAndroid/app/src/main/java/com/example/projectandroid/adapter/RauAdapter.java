@@ -1,6 +1,7 @@
 package com.example.projectandroid.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,8 @@ public class RauAdapter extends BaseAdapter {
     }
 
     public class ViewHoder {
-        ImageView imgTraiCay;
-        TextView txtTenTraiCay, txtGiaTraiCay,txtMotaTraiCay;
+        ImageView imglaptop;
+        TextView txtTenlaptop, txtGialaptop,txtMotalaptop;
     }
 
     @Override
@@ -51,11 +52,11 @@ public class RauAdapter extends BaseAdapter {
         if(view ==null){
             viewHoder= new ViewHoder();
             LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view=inflater.inflate(R.layout.dong_traicay,null);
-            viewHoder.imgTraiCay = view.findViewById(R.id.imgTraiCay);
-            viewHoder.txtTenTraiCay = view.findViewById(R.id.txtTenTraiCay);
-            viewHoder.txtGiaTraiCay = view.findViewById(R.id.txtGiaTraiCay);
-            viewHoder.txtMotaTraiCay = view.findViewById(R.id.txtMotaTraiCay);
+            view=inflater.inflate(R.layout.dong_rau,null);
+            viewHoder.imglaptop = view.findViewById(R.id.imglaptop);
+            viewHoder.txtTenlaptop = view.findViewById(R.id.txtTenlaptop);
+            viewHoder.txtGialaptop = view.findViewById(R.id.txtGialatop);
+            viewHoder.txtMotalaptop = view.findViewById(R.id.txtMotalaptop);
             view.setTag(viewHoder);
 
         }else {
@@ -63,17 +64,19 @@ public class RauAdapter extends BaseAdapter {
 
         }
         Sanpham sanpham= sanphamArrayList.get(i);
-        viewHoder.txtTenTraiCay.setText(sanpham.getTensanpham());
+        viewHoder.txtTenlaptop.setText(sanpham.getTensanpham());
 
-        viewHoder.txtMotaTraiCay.setText(sanpham.getMotasanpham());
+        viewHoder.txtMotalaptop.setMaxLines(2);
+        viewHoder.txtMotalaptop.setEllipsize(TextUtils.TruncateAt.END);
+        viewHoder.txtMotalaptop.setText(sanpham.getMotasanpham());
         Locale localeVN = new Locale("vi", "VN");
         NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
         String str1 = currencyVN.format( Integer.parseInt(sanpham.getGia()));
-        viewHoder.txtGiaTraiCay.setText(str1);
+        viewHoder.txtGialaptop.setText(str1);
         Picasso.with(context).load(sanpham.getHinhanhsanpham())
                 .placeholder(R.drawable.noimage)
                 .error(R.drawable.error)
-                .into(viewHoder.imgTraiCay);
+                .into(viewHoder.imglaptop);
 
         return view;
     }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/food_background"
+    app:cardCornerRadius="10dp"
+    android:layout_marginRight="20dp"
+    android:layout_height="70dp">
+    <LinearLayout
+        android:id="@+id/ll_background"
+        android:layout_width="match_parent"
+        android:background="@drawable/splash"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/food_img"
+            android:layout_width="50dp"
+android:layout_marginTop="5px"
+            android:layout_gravity="center"
+            android:src="@drawable/pizza_1"
+            android:layout_height="50dp"/>
+
+
+        <TextView
+            android:id="@+id/food_title"
+            android:layout_width="wrap_content"
+            android:text="Burger"
+android:layout_marginLeft="20px"
+            android:layout_marginBottom="10px"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

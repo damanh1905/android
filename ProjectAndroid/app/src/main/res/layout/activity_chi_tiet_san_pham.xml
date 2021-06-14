@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backrouinffo"
+    android:background="@color/whiteTextColor"
     tools:context=".activity.ChiTietSanPhamActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarChiTiet"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0059FF"
+        android:background="@color/themeColor"
         app:title="Chi Tiết Sản Phẩm"
         app:titleTextColor="#FFFFFF">
 
@@ -65,7 +65,8 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/spinner"
-                    android:padding="15dp" />
+                    android:padding="15dp"
+                    />
 
                 <Button
                     android:id="@+id/btnGioHang"
@@ -95,7 +96,7 @@
             android:textStyle="bold"
             android:textSize="25sp"
 
-            android:textColor="#FAF8F8"
+            android:textColor="@color/black"
             android:text="Mô Tả Chi Tiết Sản Phẩm" />
 
         <ScrollView
@@ -107,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="khoan cách"
-                android:textColor="#FAF8F8" />
+                android:textColor="@color/black" />
         </ScrollView>
 
     </LinearLayout>

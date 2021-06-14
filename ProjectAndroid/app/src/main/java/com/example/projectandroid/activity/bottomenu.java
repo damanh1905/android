@@ -1,5 +1,6 @@
 package com.example.projectandroid.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ public class bottomenu extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_insert:
                     fragment= new FragmentInsertActivity();
+//                    Intent i =new Intent(bottomenu.this,MainActivity.class);
+//                    startActivity(i);
                     break;
                 case R.id.navigation_update:
                     fragment= new FragmentUpdateActivity();

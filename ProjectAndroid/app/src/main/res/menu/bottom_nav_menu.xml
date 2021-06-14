@@ -5,16 +5,16 @@
 
         android:id="@+id/navigation_insert"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="Insert Product" />
+        android:title="Trang chủ" />
     <item
         android:id="@+id/navigation_update"
-        android:icon="@drawable/cart"
-        android:title="gio hang" />
+        android:icon="@drawable/shopping_cart_24"
+        android:title="giỏ hàng" />
 
     <item
         android:id="@+id/navigation_team"
-        android:icon="@drawable/team"
-        android:title="Team" />
+        android:icon="@drawable/account"
+        android:title="tôi" />
 
 
 

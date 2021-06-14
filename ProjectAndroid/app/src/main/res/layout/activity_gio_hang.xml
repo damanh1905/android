@@ -11,7 +11,7 @@
         android:id="@+id/toolbarThanhToan"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0059FF"
+        android:background="@color/themeColor"
         app:title="Chi Tiết Sản Phẩm"
         app:titleTextColor="#FFFFFF">
 

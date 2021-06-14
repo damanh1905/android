@@ -21,7 +21,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#E4000000"
+                android:background="@color/themeColor"
 
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -31,43 +31,87 @@
             <ViewFlipper
                 android:id="@+id/viewFlipper"
                 android:layout_width="match_parent"
-                android:background="#6423C5"
-                android:layout_height="200dp"></ViewFlipper>
+                android:background="#facdff"
+                android:layout_height="100dp"></ViewFlipper>
+            <TextView
 
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6423C5"
-                android:orientation="vertical">
+                android:layout_margin="5dp"
 
-                <TextView
+                android:text="Các loại sản phẩm"
+                android:textColor="@color/themeColor"
+                android:textSize="20sp" />
 
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center"
-                    android:text="Sản Phẩm mới nhất"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recycler_categories"
+                android:background="@color/gray1"
+                android:layout_height="wrap_content"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+
+                android:text="các hãng sản phẩm"
+                android:textColor="@color/themeColor"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recycler_food"
+                android:background="@color/gray1"
+                android:layout_height="wrap_content"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+
+                android:gravity="center"
+                android:text="Sản Phẩm mới nhất"
+                android:textColor="@color/themeColor"
+                android:textSize="20sp" />
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff">
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                  />/>
 
-            </LinearLayout>
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                app:menu="@menu/bottom_nav_menu"/>
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/nav_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bottom_menu"
+                    app:itemIconTint="@color/color_nav"
+                    app:itemTextColor="@color/color_nav"
+                    app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+                    app:menu="@menu/bottom_menu_mai" />
+                />
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="@color/themeColor"
             android:layout_gravity="start">
 
             <ListView
@@ -76,5 +120,6 @@
 
                 android:layout_height="match_parent"></ListView>
         </com.google.android.material.navigation.NavigationView>
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>

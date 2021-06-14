@@ -5,23 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgroud"
+    android:background="@color/whiteTextColor"
     tools:context=".activity.RauActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTraiCay"
+        android:id="@+id/toolbarrlaptop"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#000000"
+        android:background="@color/themeColor"
         app:titleTextColor="#FFFFFF"
         app:title="Rau"
         >
 
 
     </androidx.appcompat.widget.Toolbar>
-
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productSearchlaptop"
+        android:iconifiedByDefault="false"
+        android:queryHint="tìm kiếm"/>
     <ListView
-        android:id="@+id/lvRau"
+        android:id="@+id/lvlaptop"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -17,9 +17,11 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.RequestQueue;
@@ -30,11 +32,16 @@ import com.android.volley.toolbox.Volley;
 import com.example.projectandroid.R;
 import com.example.projectandroid.adapter.LoaispAdapter;
 import com.example.projectandroid.adapter.SanphamAdapter;
+import com.example.projectandroid.adapter.hangsanphamAdapter;
+import com.example.projectandroid.adapter.loaisanphambanAdapter;
 import com.example.projectandroid.model.Loaisp;
 import com.example.projectandroid.model.Sanpham;
+import com.example.projectandroid.model.hangsanpham;
+import com.example.projectandroid.model.loaisanpham2;
 import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.GioHang;
 import com.example.projectandroid.ultil.Server;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -43,11 +50,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
+    public  static  int pos1=0;
     ViewFlipper viewFlipper;
     RecyclerView recyclerView;
+    RecyclerView recyclerCategories,recyclerItems;
     NavigationView navigationView;
     ListView lvManhinh;
     DrawerLayout drawerLayout;
@@ -58,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     int id=0;
     String tenloaisp="";
     String hinhanhloaisp="";
+    BottomNavigationView bottomNavigationView;
     public static ArrayList<GioHang> gioHangArrayList;
 
     @Override
@@ -67,10 +78,15 @@ public class MainActivity extends AppCompatActivity {
         Anhxa();
         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
             ActionBar();
+            enventButomNav();
             ActionViewFlipper();
             GetDuLieu();
             GetDuLieuSanphammoinhat();
             CatchOnItemListView();
+            setCategories();
+            setFoodItem(0);
+//            CatchOnItemListviewhangsanpham();
+
 
 
         } else {
@@ -98,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuGioHang:
                 Intent intent = new Intent(getApplicationContext(), GioHangActivity.class);
                 startActivity(intent);
+
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }
@@ -292,6 +312,9 @@ public class MainActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         lvManhinh = (ListView) findViewById(R.id.lvManhinh);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        bottomNavigationView=(BottomNavigationView) findViewById(R.id.nav_bottom) ;
+        recyclerCategories = findViewById(R.id.recycler_categories);
+        recyclerItems = findViewById(R.id.recycler_food);
 
         AdapterloaiSP();
         AdapterSPmoinhat();
@@ -315,5 +338,130 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(sanphamAdapter);
 
     }
+    public  void enventButomNav(){
+    bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+          Intent i;
+           switch (menuItem.getItemId()){
+               case R.id.navigation_update:
+                    i=new Intent(MainActivity.this,GioHangActivity.class);
+                   startActivity(i);
+                   break;
+               case R.id.navigation_team:
+                    i=new Intent(MainActivity.this,Account.class);
+                   startActivity(i);
+                   break;
 
+           }
+            return true;
+        }
+    });
+// attaching bottom sheet behaviour - hide / show on scroll
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottomNavigationView.getLayoutParams();
+        layoutParams.setBehavior(new BottomNavigationBehavior());
+}
+public void  setCategories(){
+    List<loaisanpham2> data = new ArrayList<>();
+
+    loaisanpham2 foodCategory = new loaisanpham2("Điện thoại",R.drawable.phone_android_24);
+    loaisanpham2 foodCategory2 = new loaisanpham2("máy tính",R.drawable.laptop_24);
+    loaisanpham2 foodCategory3 = new loaisanpham2("máy tính",R.drawable.ic_baseline_tablet_mac_24);
+    loaisanpham2 foodCategory4 = new loaisanpham2("máy tính",R.drawable.camera_alt_24);
+    loaisanpham2 foodCategory5 = new loaisanpham2("máy tính",R.drawable.desktop_mac_24);
+
+
+    data.add(foodCategory);
+    data.add(foodCategory2);
+    data.add(foodCategory3);
+    data.add(foodCategory4);
+    data.add(foodCategory5);
+
+    loaisanphambanAdapter foodCategoryAdapter = new loaisanphambanAdapter(data, MainActivity.this, new loaisanphambanAdapter.OnCategoryClick() {
+        @Override
+        public void onClick(int pos) {
+            setFoodItem(pos);
+        }
+    });
+
+    recyclerCategories.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL,false));
+    recyclerCategories.setAdapter(foodCategoryAdapter);
+    foodCategoryAdapter.notifyDataSetChanged();
+
+
+}
+    private void setFoodItem(int pos){
+        pos1=pos;
+        List<hangsanpham> foodItems = new ArrayList<>();
+
+        switch (pos) {
+            case 2:
+                hangsanpham foodItem = new hangsanpham("samsung",4.5f,14,R.drawable.pizza_1);
+                hangsanpham foodItem2 = new hangsanpham("Pizza one ",5f,14,R.drawable.pizza_2);
+                hangsanpham foodItem3 = new hangsanpham("Pizza two",4f,14,R.drawable.pizza_3);
+
+                foodItems.add(foodItem);
+                foodItems.add(foodItem2);
+                foodItems.add(foodItem3);
+
+                break;
+            case 1:
+                hangsanpham foodItem5 = new hangsanpham("dell",4.5f,14,R.drawable.grill_chicken_1);
+                hangsanpham foodItem6 = new hangsanpham("Chicken one ",5f,14,R.drawable.grill_chicken_2);
+
+
+                foodItems.add(foodItem5);
+                foodItems.add(foodItem6);
+
+
+                break;
+            case 0:
+                hangsanpham foodItem9 = new hangsanpham("samsung",4.5f,14,R.drawable.samsung);
+                hangsanpham foodItem10 = new hangsanpham("oppo",5f,14,R.drawable.oppo);
+                hangsanpham foodItem11 = new hangsanpham("apple",5f,14,R.drawable.apple);
+                hangsanpham foodItem12 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
+                hangsanpham foodItem13 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
+                hangsanpham foodItem14 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
+                hangsanpham foodItem15 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
+                foodItems.add(foodItem9);
+                foodItems.add(foodItem10);
+                foodItems.add(foodItem11);
+                foodItems.add(foodItem12);
+                foodItems.add(foodItem13);
+                foodItems.add(foodItem14);
+                foodItems.add(foodItem15);
+
+
+
+
+                break;
+        }
+
+        hangsanphamAdapter foodAdapter = new hangsanphamAdapter(foodItems, MainActivity.this, new hangsanphamAdapter.OnCategoryClick() {
+            @Override
+            public void onClick(int pos) {
+                sethang(pos);
+            }
+        });
+        recyclerItems.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.HORIZONTAL,false));
+
+        recyclerItems.setAdapter(foodAdapter);
+        foodAdapter.notifyDataSetChanged();
+    }
+public void sethang(int pos) {
+    if (pos1 == 0) {
+        if (pos == 0) {
+            Intent intent = new Intent(MainActivity.this, hangsamsungActivity.class);
+            intent.putExtra("thongtinhangsanpham", pos);
+            startActivity(intent);
+
+        }
+    }else if(pos1==1){
+         if (pos == 0) {
+            Intent intent = new Intent(MainActivity.this, hangdelllaptopMainActivity.class);
+            intent.putExtra("thongtinhangsanpham", pos);
+            startActivity(intent);
+        }
+    }
+}
 }
