@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nhập số điện thoại"
+        android:hint="Nhập địa chỉ nhận hàng"
         android:layout_margin="10dp"
         android:inputType="textPersonName" />
 
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nhập Email"
+        android:hint="Nhập số điện thoại nhận hàng"
         android:layout_margin="10dp"
         android:inputType="textPersonName" />
 

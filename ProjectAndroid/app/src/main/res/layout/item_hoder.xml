@@ -17,18 +17,18 @@
         <ImageView
             android:id="@+id/food_img"
             android:layout_width="50dp"
-android:layout_marginTop="5px"
+            android:layout_marginTop="13px"
             android:layout_gravity="center"
             android:src="@drawable/pizza_1"
-            android:layout_height="50dp"/>
+            android:layout_height="40dp"/>
 
 
         <TextView
             android:id="@+id/food_title"
             android:layout_width="wrap_content"
             android:text="Burger"
-android:layout_marginLeft="20px"
-            android:layout_marginBottom="10px"
+            android:layout_marginLeft="40px"
+            android:layout_marginBottom="20px"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_height="wrap_content"/>

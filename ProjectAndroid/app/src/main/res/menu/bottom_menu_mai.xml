@@ -5,11 +5,15 @@
         android:id="@+id/navigation_insert"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Trang chủ" />
+
     <item
         android:id="@+id/navigation_update"
         android:icon="@drawable/shopping_cart_24"
         android:title="giỏ hàng" />
-
+    <item
+        android:id="@+id/navigation_team_thongbao"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="thông báo" />
     <item
         android:id="@+id/navigation_team"
         android:icon="@drawable/account"

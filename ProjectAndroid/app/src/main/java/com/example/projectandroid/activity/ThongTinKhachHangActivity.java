@@ -22,6 +22,10 @@ import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.GioHang;
 import com.example.projectandroid.ultil.Server;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,80 +56,98 @@ public class ThongTinKhachHangActivity extends AppCompatActivity {
 
 
 
-                btnXacnhan.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+        btnXacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-                        final String ten = editNameKH.getText().toString().trim();
-                        final String sdt = editsdtKH.getText().toString().trim();
-                        final String email = editemailKH.getText().toString().trim();
+                final String ten = editNameKH.getText().toString().trim();
+                final String sdt = editsdtKH.getText().toString().trim();
+                final String email = editemailKH.getText().toString().trim();
 
-                        if (ten.equals("") || sdt.equals("") || email.equals("")) {
-                            Toast.makeText(getApplicationContext(), "Hãy nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                if (ten.equals("") || sdt.equals("") || email.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Hãy nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
 
-                        } else {
-                            final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                            StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.đuongandonhang, new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(final String response) {
-                                    Log.d("sdfsfsdf", response);
-                                    RequestQueue requestQueue1 = Volley.newRequestQueue(getApplicationContext());
-                                    StringRequest stringRequest1 = new StringRequest(Request.Method.POST, Server.đuongandonhang1, new Response.Listener<String>() {
-                                        @Override
-                                        public void onResponse(String response) {
+                } else {
+                    final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.đuongandonhang, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(final String response2) {
+                            Log.d("sdfsfsdf", response2);
+                            if(Integer.parseInt(response2)>0) {
 
+
+                                RequestQueue requestQueue1 = Volley.newRequestQueue(getApplicationContext());
+                                StringRequest stringRequest1 = new StringRequest(Request.Method.POST, Server.duongdanchitietdonhang, new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        Log.d("aaa", response);
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+
+                                    }
+                                }) {
+                                    @Override
+                                    protected Map<String, String> getParams() throws AuthFailureError {
+//                                                JSONArray jsonArray = new JSONArray();
+//                                                for (int i = 0; i < MainActivity.gioHangArrayList.size(); i++) {
+//                                                    JSONObject jsonObject = new JSONObject();
+//                                                    try {
+//
+//                                                        jsonObject.put("madonhang", response2);
+//                                                        jsonObject.put("tensanpham", MainActivity.gioHangArrayList.get(i).getTensp());
+//                                                        jsonObject.put("giasanpham", MainActivity.gioHangArrayList.get(i).getGiasp());
+//                                                        jsonObject.put("soluongsanpham", String.valueOf(MainActivity.gioHangArrayList.get(i).getSoluongsp()));
+//
+//                                                    } catch (JSONException e) {
+//                                                        e.printStackTrace();
+//                                                    }
+//                                                    jsonArray.put(jsonObject);
+//                                                }
+                                        HashMap<String, String> hashMap = new HashMap<>();
+
+                                        for (GioHang gioHang1 : MainActivity.gioHangArrayList) {
+                                            hashMap.put("madonhang",  response2);
+                                            hashMap.put("tensanpham", gioHang1.getTensp());
+                                            hashMap.put("giasanpham", gioHang1.getGiasp());
+                                            hashMap.put("soluongsanpham", String.valueOf(gioHang1.getSoluongsp()));
+                                            Log.d("sdfsfsdf", gioHang1.getTensp());
+                                            return  hashMap;
                                         }
-                                    }, new Response.ErrorListener() {
-                                        @Override
-                                        public void onErrorResponse(VolleyError error) {
 
-                                        }
-                                    }) {
-                                        @Override
-                                        protected Map<String, String> getParams() throws AuthFailureError {
-                                            HashMap<String, String> hashMap = new HashMap<>();
+//                                                hashMap.put("json", jsonArray.toString());
+                                        return hashMap;
 
-                                            for (GioHang gioHang1 : MainActivity.gioHangArrayList) {
-                                                hashMap.put("madonhang", response);
-                                                hashMap.put("tensanpham", gioHang1.getTensp());
-                                                hashMap.put("giasanpham", gioHang1.getGiasp());
-                                                hashMap.put("soluong", String.valueOf(gioHang1.getSoluongsp()));
-                                                return  hashMap;
-                                            }
+                                    }
+                                };
 
 
-                                            return hashMap;
-
-                                        }
-                                    };
-
-
-
-                                    requestQueue1.add(stringRequest1);
-                                    Intent intent = new Intent(ThongTinKhachHangActivity.this, ThongtindonhangActivity.class);
-                                    startActivity(intent);
-                                    MainActivity.gioHangArrayList.clear();
-
-                                }
-                            }, new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-
-                                }
-                            }) {
-                                @Override
-                                protected Map<String, String> getParams() throws AuthFailureError {
-                                    HashMap<String, String> hashMap = new HashMap<>();
-                                    hashMap.put("tenkhachhang", ten);
-                                    hashMap.put("sodienthoai", sdt);
-                                    hashMap.put("email", email);
-                                    return hashMap;
-                                }
-                            };
-                            requestQueue.add(stringRequest);
+                                requestQueue1.add(stringRequest1);
+                                Intent intent = new Intent(ThongTinKhachHangActivity.this, ThongtindonhangActivity.class);
+                                startActivity(intent);
+                                MainActivity.gioHangArrayList.clear();
+                            }
                         }
-                    }
-                });
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            HashMap<String, String> hashMap = new HashMap<>();
+                            hashMap.put("tenkhachhang", ten);
+                            hashMap.put("diachi", sdt);
+                            hashMap.put("sodienthoai", email);
+                            return hashMap;
+                        }
+                    };
+                    requestQueue.add(stringRequest);
+                }
+            }
+        });
 
 
 

@@ -33,12 +33,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class loginActivity extends AppCompatActivity {
-ImageView  fb,google;
+    ImageView  fb,google;
+    public static int iduser=0;
     EditText email,pass;
     Button login;
     TextView forgetpass;
     ArrayList<user> listuser;
-float v=0;
+    float v=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,60 +106,72 @@ float v=0;
     private void enventButton(){
 
 
-          final String tk=email.getText().toString().trim();
-            final String mk=pass.getText().toString().trim();
+        final String tk=email.getText().toString().trim();
+        final String mk=pass.getText().toString().trim();
 
-            if(!tk.equals("") && !mk.equals("")){
-                String url = Server.getuser;
-                RequestQueue queue = Volley.newRequestQueue(loginActivity.this);
+        if(!tk.equals("") && !mk.equals("")){
+            String url = Server.getuser;
+            RequestQueue queue = Volley.newRequestQueue(loginActivity.this);
 
 
-                final JsonArrayRequest stringRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
+            final JsonArrayRequest stringRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+                @Override
+                public void onResponse(JSONArray response) {
 
-                        if(response!=null) {
-                            for (int i = 0; i < response.length(); i++) {
-                                try {
-                                    JSONObject jsonObject1 = response.getJSONObject(i);
-                                    Log.d("testss", jsonObject1.toString());
-                                    int id = jsonObject1.getInt("id");
-                                    String name = jsonObject1.getString("Ten");
-                                    String matkhau = jsonObject1.getString("matkhau");
-                                    String quyen = jsonObject1.getString("quyen");
-                                    if(tk.equals(name) && mk.equals(matkhau)){
+                    if(response!=null) {
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject jsonObject1 = response.getJSONObject(i);
+                                Log.d("testss", jsonObject1.toString());
+                                int id = jsonObject1.getInt("id");
+                                String name = jsonObject1.getString("Ten");
+                                String email = jsonObject1.getString("Email");
+                                String matkhau = jsonObject1.getString("matkhau");
+                                String quyen = jsonObject1.getString("quyen");
+                                user u=new user(id,email,name,matkhau,quyen);
 
-                                        Intent a = new Intent(loginActivity.this, MainActivity.class);
-                                         startActivity(a);
-                                        finish();
 
-                                    }else {
-                                            CheckConnection.ShowToast_short(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu");
+                                if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("user")){
+                                    iduser=id;
+                                    Log.d("uuuuuuuuuu", String.valueOf(loginActivity.iduser));
+                                    Intent a = new Intent(loginActivity.this, MainActivity.class);
+                                    startActivity(a);
+                                    finish();
 
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                                }if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("admin")){
+                                    Intent a = new Intent(loginActivity.this, GioHangActivity.class);
+                                    startActivity(a);
+                                    finish();
                                 }
+
+
+                                else {
+                                    CheckConnection.ShowToast_short(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu");
+
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
                         }
+                    }
 
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("testss", "khong doc duoc du lieu");
-                    }
-                });
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("testss", "khong doc duoc du lieu");
+                }
+            });
 
 // thêm vào màn hình
-                queue.add(stringRequest);
+            queue.add(stringRequest);
 
 
-            }else {
-                Toast.makeText(loginActivity.this, "tài khoản hoặc mật khẩu đang trống", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(loginActivity.this, "tài khoản hoặc mật khẩu đang trống", Toast.LENGTH_SHORT).show();
 
 
-            }
+        }
 
 
     }

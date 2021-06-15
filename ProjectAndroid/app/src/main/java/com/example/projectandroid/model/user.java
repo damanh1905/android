@@ -3,14 +3,28 @@ package com.example.projectandroid.model;
 public class user {
     private int id;
     private String Email;
+    private String ten;
+
     private String matkhau;
     private String quyen;
 
-    public user(int id, String email, String matkhau, String quyen) {
+    public user(int id, String email, String ten,String matkhau, String quyen) {
         this.id = id;
-        Email = email;
+        this.Email = email;
+        this.ten=ten;
         this.matkhau = matkhau;
         this.quyen = quyen;
+    }
+
+    public user() {
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
     public int getId() {

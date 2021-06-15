@@ -396,9 +396,9 @@ public void  setCategories(){
 
         switch (pos) {
             case 2:
-                hangsanpham foodItem = new hangsanpham("samsung",4.5f,14,R.drawable.pizza_1);
-                hangsanpham foodItem2 = new hangsanpham("Pizza one ",5f,14,R.drawable.pizza_2);
-                hangsanpham foodItem3 = new hangsanpham("Pizza two",4f,14,R.drawable.pizza_3);
+                hangsanpham foodItem = new hangsanpham("samsung",4.5f,14,R.drawable.samsung);
+                hangsanpham foodItem2 = new hangsanpham("Apple ",5f,14,R.drawable.apple);
+                hangsanpham foodItem3 = new hangsanpham("hihi",4f,14,R.drawable.xixaomi);
 
                 foodItems.add(foodItem);
                 foodItems.add(foodItem2);
@@ -406,12 +406,13 @@ public void  setCategories(){
 
                 break;
             case 1:
-                hangsanpham foodItem5 = new hangsanpham("dell",4.5f,14,R.drawable.grill_chicken_1);
-                hangsanpham foodItem6 = new hangsanpham("Chicken one ",5f,14,R.drawable.grill_chicken_2);
+                hangsanpham foodItem5 = new hangsanpham("dell",4.5f,14,R.drawable.dell);
+                hangsanpham foodItem6 = new hangsanpham("lenovo",5f,14,R.drawable.lenovo);
 
 
                 foodItems.add(foodItem5);
                 foodItems.add(foodItem6);
+
 
 
                 break;
@@ -419,10 +420,10 @@ public void  setCategories(){
                 hangsanpham foodItem9 = new hangsanpham("samsung",4.5f,14,R.drawable.samsung);
                 hangsanpham foodItem10 = new hangsanpham("oppo",5f,14,R.drawable.oppo);
                 hangsanpham foodItem11 = new hangsanpham("apple",5f,14,R.drawable.apple);
-                hangsanpham foodItem12 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
-                hangsanpham foodItem13 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
-                hangsanpham foodItem14 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
-                hangsanpham foodItem15 = new hangsanpham("xiaomi",5f,14,R.drawable.burger);
+                hangsanpham foodItem12 = new hangsanpham("xiaomi",5f,14,R.drawable.xixaomi);
+                hangsanpham foodItem13 = new hangsanpham("xiaomi",5f,14,R.drawable.xixaomi);
+                hangsanpham foodItem14 = new hangsanpham("xiaomi",5f,14,R.drawable.xixaomi);
+                hangsanpham foodItem15 = new hangsanpham("xiaomi",5f,14,R.drawable.xixaomi);
                 foodItems.add(foodItem9);
                 foodItems.add(foodItem10);
                 foodItems.add(foodItem11);
@@ -430,6 +431,7 @@ public void  setCategories(){
                 foodItems.add(foodItem13);
                 foodItems.add(foodItem14);
                 foodItems.add(foodItem15);
+
 
 
 

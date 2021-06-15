@@ -11,4 +11,5 @@ public class Server {
     public static String getuser = "http://" + localhost + "/server/getuser.php";
     public static String insertuser = "http://" + localhost + "/server/insertUser.php";
     public static String getsanphamtheohang= "http://" + localhost + "/server/getsanphamtheohang.php?page=";
+    public static String duongdanchitietdonhang = "http://" + localhost + "/server/chitietdonhang.php";
 }
