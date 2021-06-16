@@ -16,4 +16,8 @@
     <color name="whiteTextColor">#FBF2FB</color>
     <color name="primaryTextColor">#11CFC5</color>
     <color name="gray">#E8E9f6</color>
+    <color name="transparent">#00000000</color>
+    <color name="textColor">#6e6e6e</color>
+    <color name="editTextBackground">#DADADA</color>
+
 </resources>

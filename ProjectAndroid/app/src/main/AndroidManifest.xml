@@ -71,7 +71,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".activity.EditAccount" />
+        <activity android:name=".activity.AddAccount" />
+        <activity android:name=".activity.Contact" />
+        <activity android:name=".activity.EditProduct" />
+        <activity android:name=".activity.AddProduct" />
+        <activity android:name=".activity.ManagerProduct">
+
+        </activity>
+        <activity android:name=".activity.ManagerAccount"></activity>
+        <activity android:name=".activity.Admin" />
     </application>
 
 </manifest>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddProduct">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/gradient"
+                    android:scaleType="fitXY" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="#6b000000"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/imgBack"
+                            android:layout_width="49dp"
+                            android:layout_height="54dp"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/imgProduct"
+                            android:layout_width="49dp"
+                            android:layout_height="54dp"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/ic_sharp_apps_24"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20sp"
+                            android:text="Edit Product"
+                            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutUserName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewIdIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/idEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewIdIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewIdIcon"
+                    android:background="@color/editTextBackground"
+                    android:enabled="false"
+                    android:hint="Id"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayoutUserName"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewName"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/nameEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewName"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewName"
+                    android:background="@color/editTextBackground"
+                    android:hint="Name Product"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayoutPrice"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewPrice"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/priceEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewPrice"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewPrice"
+                    android:background="@color/editTextBackground"
+                    android:hint="Price"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayoutImg"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/imgEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/image"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/image"
+                    android:background="@color/editTextBackground"
+                    android:hint="Image"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeLayoutDes"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewDesIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/desEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewDesIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewDesIcon"
+                    android:background="@color/editTextBackground"
+                    android:hint="Description"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutIdType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewId"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/idTypeEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewId"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewId"
+                    android:background="@color/editTextBackground"
+                    android:hint="Id Type"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relativeLayoutHang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp">
+
+                <ImageView
+                    android:id="@+id/imageViewHang"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#838988"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_create_24"
+                    android:tint="@color/white" />
+
+                <EditText
+
+                    android:id="@+id/hangEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageViewHang"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageViewHang"
+                    android:background="@color/editTextBackground"
+                    android:hint="Manufacturer"
+                    android:paddingLeft="20dp"
+                    android:textSize="15dp" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/idEditProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/gradient"
+                android:enabled="true"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Save"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,12 @@ public class Server {
     public static String insertuser = "http://" + localhost + "/server/insertUser.php";
     public static String getsanphamtheohang= "http://" + localhost + "/server/getsanphamtheohang.php?page=";
     public static String duongdanchitietdonhang = "http://" + localhost + "/server/chitietdonhang.php";
+
+    public static String duongdanthemsp="http://"+localhost+"/server/insertProduct.php";
+    public static String duongdancapnhatsp="http://" + localhost + "/server/updateProduct.php";
+    public static String duongdanxoasp="http://" + localhost + "/server/deleteProduct.php";
+    public static String duongdanthemacc="http://"+localhost+"/server/insertAcc.php";
+    public static String duongdancapnhatacc="http://" + localhost + "/server/updateAcc.php";
+    public static String duongdanxoaacc="http://" + localhost + "/server/deleteAcc.php";
+    public static String duongdandataacc="http://" + localhost + "/server/getDataAcc.php";
 }

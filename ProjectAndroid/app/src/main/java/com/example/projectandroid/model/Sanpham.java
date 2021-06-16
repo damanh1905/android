@@ -9,6 +9,7 @@ public class Sanpham implements Serializable {
     private String hinhanhsanpham;
     private String motasanpham;
     private int idloaisp;
+    private String hang;
 
     public Sanpham(int idsanpham, String tensanpham, String gia, String hinhanhsanpham, String motasanpham, int idloaisp) {
         this.idsanpham = idsanpham;
@@ -17,6 +18,16 @@ public class Sanpham implements Serializable {
         this.hinhanhsanpham = hinhanhsanpham;
         this.motasanpham = motasanpham;
         this.idloaisp = idloaisp;
+    }
+
+    public Sanpham(int idsanpham, String tensanpham, String gia, String hinhanhsanpham, String motasanpham, int idloaisp, String hang) {
+        this.idsanpham = idsanpham;
+        this.tensanpham = tensanpham;
+        this.gia = gia;
+        this.hinhanhsanpham = hinhanhsanpham;
+        this.motasanpham = motasanpham;
+        this.idloaisp = idloaisp;
+        this.hang = hang;
     }
 
     public int getIdsanpham() {
@@ -67,9 +78,16 @@ public class Sanpham implements Serializable {
         this.idloaisp = idloaisp;
     }
 
+    public String getHang() {
+        return hang;
+    }
+
+    public void setHang(String hang) {
+        this.hang = hang;
+    }
+
     @Override
-    public String
-    toString() {
+    public String toString() {
         return "Sanpham{" +
                 "idsanpham=" + idsanpham +
                 ", tensanpham='" + tensanpham + '\'' +
@@ -77,6 +95,7 @@ public class Sanpham implements Serializable {
                 ", hinhanhsanpham='" + hinhanhsanpham + '\'' +
                 ", motasanpham='" + motasanpham + '\'' +
                 ", idloaisp=" + idloaisp +
+                ", hang='" + hang + '\'' +
                 '}';
     }
 }
