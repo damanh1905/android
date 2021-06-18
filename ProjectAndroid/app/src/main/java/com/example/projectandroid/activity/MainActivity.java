@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                loaispArrayList.add(response.length() + 1, new Loaisp(2000, "Thong tin", "https://upload.wikimedia.org/wikipedia/commons/5/54/Information.png"));
+                loaispArrayList.add(response.length() + 1, new Loaisp(2000, "Thông tin", "https://upload.wikimedia.org/wikipedia/commons/5/54/Information.png"));
                 loaispArrayList.add(response.length() + 2, new Loaisp(2001, "Đăng xuất", "https://ak.picdn.net/shutterstock/videos/22592884/thumb/10.jpg"));
                 loaispAdapter.notifyDataSetChanged();
             }
@@ -265,10 +265,10 @@ public class MainActivity extends AppCompatActivity {
     private void ActionViewFlipper() {
         // thêm mấy cái hình vào mảng
         ArrayList<String> mangquangcao = new ArrayList<>();
-        mangquangcao.add("https://image.thanhnien.vn/660/uploaded/minhnguyet/2019_10_10/trai-cay_boqu.jpg");
-        mangquangcao.add("https://cdn.tuoitre.vn/thumb_w/640/2018/3/24/photo-1-152187920921975519736.jpg");
-        mangquangcao.add("https://www.sapo.vn/blog/wp-content/uploads/2017/03/buon-ban-kinh-doanh-hoa-qua-tuoi-trai-cay-sach-online1.jpg");
-        mangquangcao.add("https://sohanews.sohacdn.com/thumb_w/660/2019/1/11/cac-loai-trai-cay-1547174171357506224603-crop-1547174182816570687384.jpg");
+        mangquangcao.add("http://banlaptopgiare.com/wp-content/uploads/2019/12/laptop-gia-re-sinh-vien.jpg");
+        mangquangcao.add("https://tinhocmiennam.com/wp-content/uploads/2018/06/laptop-banner.jpg");
+        mangquangcao.add("https://cdn.tgdd.vn/Files/2018/11/27/1134121/bannerlaptopthang12_800x450.png");
+        mangquangcao.add("https://tctshop.com/wp-content/uploads/2015/12/banner-tctshop-com-1.jpg");
 
         // chuyển đổi dạng url sang hình ảnh để hiển thị
         for (int i = 0; i < mangquangcao.size(); i++) {

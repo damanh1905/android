@@ -138,15 +138,14 @@ public class loginActivity extends AppCompatActivity {
                                     startActivity(a);
                                     finish();
 
-                                }if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("admin")){
-                                    Intent a = new Intent(loginActivity.this, GioHangActivity.class);
+                                }
+                                if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("admin")){
+                                    Intent a = new Intent(loginActivity.this, Admin.class);
                                     startActivity(a);
                                     finish();
                                 }
-
-
                                 else {
-                                    CheckConnection.ShowToast_short(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu");
+                                    Toast.makeText(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
 
                                 }
                             } catch (JSONException e) {

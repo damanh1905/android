@@ -31,7 +31,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.loginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".activity.FragmentUpdateActivity"
             tools:ignore="Instantiatable,MissingClass" />
@@ -66,13 +72,10 @@
         <activity android:name=".activity.RauActivity" />
         <activity android:name=".activity.DienThoaiActivity" />
         <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
+
         <activity android:name=".activity.EditAccount" />
         <activity android:name=".activity.AddAccount" />
         <activity android:name=".activity.Contact" />

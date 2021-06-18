@@ -14,7 +14,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/themeColor"
         app:titleTextColor="#FFFFFF"
-        app:title="Rau"
+        app:title="Máy Tính"
         >
 
 
