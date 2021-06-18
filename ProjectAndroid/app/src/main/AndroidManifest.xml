@@ -23,7 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.hangdelllaptopMainActivity"></activity>
+        <activity android:name=".activity.Notification"></activity>
+        <activity android:name=".activity.hangdelllaptopMainActivity" />
         <activity android:name=".activity.hangsamsungActivity" />
         <activity android:name=".activity.Account" />
         <activity
@@ -31,12 +32,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.loginActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.FragmentUpdateActivity"
@@ -71,20 +72,14 @@
         <activity android:name=".activity.CuActivity" />
         <activity android:name=".activity.RauActivity" />
         <activity android:name=".activity.DienThoaiActivity" />
-        <activity android:name=".activity.MainActivity">
-
-
-        </activity>
-
+        <activity android:name=".activity.MainActivity"></activity>
         <activity android:name=".activity.EditAccount" />
         <activity android:name=".activity.AddAccount" />
         <activity android:name=".activity.Contact" />
         <activity android:name=".activity.EditProduct" />
         <activity android:name=".activity.AddProduct" />
-        <activity android:name=".activity.ManagerProduct">
-
-        </activity>
-        <activity android:name=".activity.ManagerAccount"></activity>
+        <activity android:name=".activity.ManagerProduct"></activity>
+        <activity android:name=".activity.ManagerAccount" />
         <activity android:name=".activity.Admin" />
     </application>
 

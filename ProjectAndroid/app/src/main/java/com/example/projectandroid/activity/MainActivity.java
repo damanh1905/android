@@ -352,6 +352,10 @@ public class MainActivity extends AppCompatActivity {
                     i=new Intent(MainActivity.this,Account.class);
                    startActivity(i);
                    break;
+               case R.id.navigation_team_thongbao:
+                   i=new Intent(MainActivity.this,Notification.class);
+                   startActivity(i);
+                   break;
 
            }
             return true;

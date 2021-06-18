@@ -60,6 +60,10 @@ public class Account extends AppCompatActivity {
                         startActivity(i);
 
                         break;
+                    case R.id.navigation_team_thongbao:
+                        i=new Intent(Account.this,Notification.class);
+                        startActivity(i);
+                        break;
 
 
                 }
