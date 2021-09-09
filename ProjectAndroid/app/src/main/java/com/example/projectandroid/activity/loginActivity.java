@@ -1,8 +1,5 @@
 package com.example.projectandroid.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,13 +11,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.projectandroid.R;
-import com.example.projectandroid.model.Loaisp;
 import com.example.projectandroid.model.user;
 import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.Server;
@@ -30,7 +28,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class loginActivity extends AppCompatActivity {
     ImageView  fb,google;
@@ -130,24 +127,24 @@ public class loginActivity extends AppCompatActivity {
                                 String quyen = jsonObject1.getString("quyen");
                                 user u=new user(id,email,name,matkhau,quyen);
 
+                                     if(!tk.equals(u.getTen()) || !mk.equals(u.getMatkhau())){
+                                    Toast.makeText(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
 
-                                if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("user")){
+                                }
+                                else if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("user")){
                                     iduser=id;
                                     Log.d("uuuuuuuuuu", String.valueOf(loginActivity.iduser));
                                     Intent a = new Intent(loginActivity.this, MainActivity.class);
                                     startActivity(a);
                                     finish();
 
-                                }
+                                }else
                                 if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("admin")){
                                     Intent a = new Intent(loginActivity.this, Admin.class);
                                     startActivity(a);
                                     finish();
                                 }
-                                else {
-                                    Toast.makeText(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
 
-                                }
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

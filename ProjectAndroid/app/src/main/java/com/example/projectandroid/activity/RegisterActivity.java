@@ -1,7 +1,5 @@
 package com.example.projectandroid.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -70,6 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                             Log.d("iduser",response);
+                                CheckConnection.ShowToast_short(getApplicationContext(),"đăng kí thành công");
+
+
                             }
                         }, new Response.ErrorListener() {
                             @Override
