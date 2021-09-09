@@ -25,8 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.projectandroid.R;
-import com.example.projectandroid.adapter.RauAdapter;
-import com.example.projectandroid.adapter.TraiCayAdapter;
+import com.example.projectandroid.adapter.LaptopAdapter;
 import com.example.projectandroid.model.Sanpham;
 import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.Server;
@@ -39,14 +38,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RauActivity extends AppCompatActivity {
+public class LaptopActivity extends AppCompatActivity {
     private int idlaptop = 6;
     private int page = 1;
     Toolbar toolbar;
     Boolean isLoading = false;
     ListView lvlaptop;
     SearchView searchView;
-    RauAdapter rauAdapter;
+    LaptopAdapter laptopAdapter;
     ArrayList<Sanpham> laptops;
     View footerview;
     mHanler mHanler;
@@ -54,7 +53,7 @@ public class RauActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rau);
+        setContentView(R.layout.activity_laptop);
         Anhxa();
         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
         GetIDLoaiSP();
@@ -88,9 +87,9 @@ public class RauActivity extends AppCompatActivity {
     lvlaptop = findViewById(R.id.lvlaptop);
     laptops = new ArrayList<>();
     searchView=(SearchView)findViewById(R.id.productSearchlaptop);
-    rauAdapter = new RauAdapter(getApplicationContext(),laptops);
-    lvlaptop.setAdapter(rauAdapter);
-    rauAdapter.notifyDataSetChanged();
+    laptopAdapter = new LaptopAdapter(getApplicationContext(),laptops);
+    lvlaptop.setAdapter(laptopAdapter);
+    laptopAdapter.notifyDataSetChanged();
     LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
     footerview = inflater.inflate(R.layout.processbar, null);
     mHanler = new mHanler();
@@ -114,8 +113,8 @@ public class RauActivity extends AppCompatActivity {
                         lisSearch.add(sanpham);
                     }
                 }
-                rauAdapter=new RauAdapter(RauActivity.this,lisSearch);
-                lvlaptop.setAdapter(rauAdapter);
+                laptopAdapter =new LaptopAdapter(LaptopActivity.this,lisSearch);
+                lvlaptop.setAdapter(laptopAdapter);
                 return false;
             }
         });
@@ -154,7 +153,7 @@ public class RauActivity extends AppCompatActivity {
                             int idloaisp = jsonObject.getInt("idloaisp");
                             Sanpham sanpham = new Sanpham(id, tensanpham, String.valueOf(gia), hinhanhsanpham, motasanpham, idloaisp);
                             laptops.add(sanpham);
-                            rauAdapter.notifyDataSetChanged();
+                            laptopAdapter.notifyDataSetChanged();
                         }
 
 

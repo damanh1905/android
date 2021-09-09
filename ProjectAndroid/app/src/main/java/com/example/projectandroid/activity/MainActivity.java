@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
-                            Intent intent = new Intent(MainActivity.this, RauActivity.class);
+                            Intent intent = new Intent(MainActivity.this, LaptopActivity.class);
                             intent.putExtra("idRau", 2);
                             startActivity(intent);
                         } else {
@@ -323,7 +323,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void AdapterloaiSP() {
         loaispArrayList = new ArrayList<>();
-        loaispArrayList.add(0, new Loaisp(0, "Trang Chính", "https://img.icons8.com/cotton/2x/home.png"));
+        loaispArrayList.add(0, new Loaisp(0, "Trang Chính", "https://noithattinnghia.com/wp-content/uploads/2019/03/cropped-icon-home-cam.png"));
         loaispAdapter = new LoaispAdapter(MainActivity.this, loaispArrayList);
         lvManhinh.setAdapter(loaispAdapter);
         loaispAdapter.notifyDataSetChanged();

@@ -25,7 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.projectandroid.R;
-import com.example.projectandroid.adapter.TraiCayAdapter;
+import com.example.projectandroid.adapter.DienThoaiAdapter;
 import com.example.projectandroid.model.Sanpham;
 import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.Server;
@@ -46,7 +46,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
     Boolean isLoading = false;
     ListView lvtraiCay;
     SearchView searchView;
-    TraiCayAdapter traiCayAdapter;
+    DienThoaiAdapter dienThoaiAdapter;
     ArrayList<Sanpham> traiCays;
     View footerview;
     mHanler mHanler;
@@ -56,7 +56,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trai_cay);
+        setContentView(R.layout.activity_dien_thoai);
         AnhXa();
 
 
@@ -104,8 +104,8 @@ public class    DienThoaiActivity extends AppCompatActivity {
                         lisSearch.add(sanpham);
                     }
                 }
-                traiCayAdapter=new TraiCayAdapter(DienThoaiActivity.this,lisSearch);
-                lvtraiCay.setAdapter(traiCayAdapter);
+                dienThoaiAdapter =new DienThoaiAdapter(DienThoaiActivity.this,lisSearch);
+                lvtraiCay.setAdapter(dienThoaiAdapter);
                 return false;
             }
         });
@@ -162,7 +162,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
                             int idloaisp = jsonObject.getInt("idloaisp");
                             Sanpham sanpham = new Sanpham(id, tensanpham, String.valueOf(gia), hinhanhsanpham, motasanpham, idloaisp);
                             traiCays.add(sanpham);
-                            traiCayAdapter.notifyDataSetChanged();
+                            dienThoaiAdapter.notifyDataSetChanged();
                         }
 
 
@@ -197,9 +197,9 @@ public class    DienThoaiActivity extends AppCompatActivity {
         lvtraiCay = findViewById(R.id.lvtraiCay);
         traiCays = new ArrayList<>();
 searchView=(SearchView)findViewById(R.id.productSearch);
-        traiCayAdapter = new TraiCayAdapter(DienThoaiActivity.this, traiCays);
-        lvtraiCay.setAdapter(traiCayAdapter);
-        traiCayAdapter.notifyDataSetChanged();
+        dienThoaiAdapter = new DienThoaiAdapter(DienThoaiActivity.this, traiCays);
+        lvtraiCay.setAdapter(dienThoaiAdapter);
+        dienThoaiAdapter.notifyDataSetChanged();
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         footerview = inflater.inflate(R.layout.processbar, null);
         mHanler = new mHanler();

@@ -23,10 +23,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.projectandroid.R;
-import com.example.projectandroid.adapter.TraiCayAdapter;
 import com.example.projectandroid.adapter.listviewhangsanphamAdapter;
 import com.example.projectandroid.model.Sanpham;
-import com.example.projectandroid.model.hangsanpham;
 import com.example.projectandroid.ultil.CheckConnection;
 import com.example.projectandroid.ultil.Server;
 
