@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
                             public void onResponse(String response) {
                             Log.d("iduser",response);
                                 CheckConnection.ShowToast_short(getApplicationContext(),"đăng kí thành công");
-
+                                
 
                             }
                         }, new Response.ErrorListener() {

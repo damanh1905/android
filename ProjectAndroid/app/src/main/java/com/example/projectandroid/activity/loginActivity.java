@@ -127,11 +127,8 @@ public class loginActivity extends AppCompatActivity {
                                 String quyen = jsonObject1.getString("quyen");
                                 user u=new user(id,email,name,matkhau,quyen);
 
-                                     if(!tk.equals(u.getTen()) || !mk.equals(u.getMatkhau())){
-                                    Toast.makeText(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
 
-                                }
-                                else if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("user")){
+                                if(tk.equals(u.getTen()) && mk.equals(u.getMatkhau()) && u.getQuyen().equals("user")){
                                     iduser=id;
                                     Log.d("uuuuuuuuuu", String.valueOf(loginActivity.iduser));
                                     Intent a = new Intent(loginActivity.this, MainActivity.class);
@@ -143,6 +140,9 @@ public class loginActivity extends AppCompatActivity {
                                     Intent a = new Intent(loginActivity.this, Admin.class);
                                     startActivity(a);
                                     finish();
+                                } if(tk.equals(u.getTen()) && !mk.equals(u.getMatkhau()) || !tk.equals(u.getTen()) && mk.equals(u.getMatkhau())){
+                                    Toast.makeText(loginActivity.this,"bạn đã nhập sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
+
                                 }
 
                             } catch (JSONException e) {
