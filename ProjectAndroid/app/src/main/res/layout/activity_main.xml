@@ -25,7 +25,7 @@
 
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
-                app:title="Trang chính"
+                app:title="Trang Chủ"
                 app:titleTextColor="#FFFFFF" />
 
             <ViewFlipper
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
 
-                android:text="Các loại sản phẩm"
+                android:text="Danh Mục"
                 android:textColor="@color/themeColor"
                 android:textSize="20sp" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
 
-                android:text="các hãng sản phẩm"
+                android:text="Thương Hiệu"
                 android:textColor="@color/themeColor"
                 android:textSize="20sp" />
 
@@ -70,7 +70,7 @@
                 android:layout_margin="5dp"
 
                 android:gravity="center"
-                android:text="Sản Phẩm mới nhất"
+                android:text="Sản Phẩm Mới Nhất"
                 android:textColor="@color/themeColor"
                 android:textSize="20sp" />
 

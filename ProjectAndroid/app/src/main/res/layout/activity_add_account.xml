@@ -60,7 +60,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20sp"
-                            android:text="Add Account"
+                            android:text="Thêm Tài Khoản"
                             android:textColor="@color/common_google_signin_btn_text_dark_focused"
                             android:textSize="26sp"
                             android:textStyle="bold" />
@@ -137,7 +137,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewIdIcon"
                     android:background="@color/editTextBackground"
-                    android:hint="UserName"
+                    android:hint="Tên đăng nhập"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -170,7 +170,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewPasswordIcon"
                     android:background="@color/editTextBackground"
-                    android:hint="Password"
+                    android:hint="Mật khẩu"
                     android:inputType="textPassword"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
@@ -204,7 +204,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewPhone"
                     android:background="@color/editTextBackground"
-                    android:hint="Phone Number"
+                    android:hint="Số điện thoại"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -237,7 +237,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewRole"
                     android:background="@color/editTextBackground"
-                    android:hint="Role"
+                    android:hint="Quyền"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -257,7 +257,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/gradient"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Add"
+                android:text="Thêm"
                 android:textColor="@color/white" />
 
         </LinearLayout>

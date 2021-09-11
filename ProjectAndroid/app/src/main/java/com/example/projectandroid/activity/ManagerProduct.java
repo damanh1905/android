@@ -126,7 +126,7 @@ public class ManagerProduct extends AppCompatActivity {
                     GetDuLieuSanphammoinhat();
 
                 }else{
-                    Toast.makeText(ManagerProduct.this,"Failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManagerProduct.this,"Thất bại",Toast.LENGTH_SHORT).show();
 
                 }
 

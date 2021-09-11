@@ -119,7 +119,7 @@ public class ManagerAccount extends AppCompatActivity {
                     GetDuLieuAccount();
 
                 }else{
-                    Toast.makeText(ManagerAccount.this,"Failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManagerAccount.this,"Thất bại",Toast.LENGTH_SHORT).show();
 
                 }
 

@@ -64,7 +64,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20sp"
-                            android:text="Add Product"
+                            android:text="Thêm sản phẩm"
                             android:textColor="@color/common_google_signin_btn_text_dark_focused"
                             android:textSize="26sp"
                             android:textStyle="bold" />
@@ -144,7 +144,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewName"
                     android:background="@color/editTextBackground"
-                    android:hint="Name Product"
+                    android:hint="Tên sản phẩm"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -178,7 +178,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewPrice"
                     android:background="@color/editTextBackground"
-                    android:hint="Price"
+                    android:hint="Giá"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -212,7 +212,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/image"
                     android:background="@color/editTextBackground"
-                    android:hint="Image"
+                    android:hint="Ảnh"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -246,7 +246,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewDesIcon"
                     android:background="@color/editTextBackground"
-                    android:hint="Description"
+                    android:hint="Mô tả"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -280,7 +280,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewId"
                     android:background="@color/editTextBackground"
-                    android:hint="Id Type"
+                    android:hint="Mã danh mục"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -313,7 +313,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imageViewHang"
                     android:background="@color/editTextBackground"
-                    android:hint="Manufacturer"
+                    android:hint="Thương hiệu"
                     android:paddingLeft="20dp"
                     android:textSize="15dp" />
 
@@ -330,7 +330,7 @@
                 android:background="@drawable/gradient"
                 android:enabled="true"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Add"
+                android:text="Thêm"
                 android:textColor="@color/white" />
 
 

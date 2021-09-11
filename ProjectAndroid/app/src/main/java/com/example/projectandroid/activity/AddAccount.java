@@ -71,10 +71,10 @@ public class AddAccount extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(response.trim().equals("success")){
-                    Toast.makeText(AddAccount.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddAccount.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AddAccount.this,ManagerAccount.class));
                 }else{
-                    Toast.makeText(AddAccount.this,"Failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddAccount.this,"Thêm thất bại",Toast.LENGTH_SHORT).show();
 
                 }
 

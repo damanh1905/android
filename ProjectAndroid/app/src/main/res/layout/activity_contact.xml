@@ -60,7 +60,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20sp"
-                            android:text="Contact"
+                            android:text="Liên hệ"
                             android:textColor="@color/common_google_signin_btn_text_dark_focused"
                             android:textSize="26sp"
                             android:textStyle="bold" />

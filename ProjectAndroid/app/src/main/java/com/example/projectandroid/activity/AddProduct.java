@@ -72,10 +72,10 @@ public class AddProduct extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(response.trim().equals("success")){
-                    Toast.makeText(AddProduct.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddProduct.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AddProduct.this,ManagerProduct.class));
                 }else{
-                    Toast.makeText(AddProduct.this,"Failed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddProduct.this,"Thêm thất bại",Toast.LENGTH_SHORT).show();
 
                 }
 

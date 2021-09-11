@@ -84,10 +84,10 @@ public class EditAccount extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         if(response.trim().equals("success")){
-                            Toast.makeText(EditAccount.this, "Edit Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditAccount.this, "Sửa thành công", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(EditAccount.this,ManagerAccount.class));
                         }else{
-                            Toast.makeText(EditAccount.this,"Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditAccount.this,"Sửa thất bại",Toast.LENGTH_SHORT).show();
 
                         }
 

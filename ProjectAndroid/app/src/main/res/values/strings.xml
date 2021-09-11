@@ -6,8 +6,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_map">Map</string>
 
-    <string name="login_email_hint">User</string>
-    <string name="login_password_hint">Password</string>
+    <string name="login_email_hint">Tên đăng nhập</string>
+    <string name="login_password_hint">Mật khẩu</string>
 
 
 </resources>

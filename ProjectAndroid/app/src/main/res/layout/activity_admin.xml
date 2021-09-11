@@ -135,7 +135,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
-              android:text="Home"
+              android:text="Trang chủ"
               android:textColor="#262626"
               android:textSize="16sp" />
         </LinearLayout>
@@ -162,7 +162,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
-              android:text="Manage Account"
+              android:text="Quản lí tài khoản"
               android:textColor="#262626"
               android:textSize="16sp" />
 
@@ -191,7 +191,7 @@
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
               android:layout_weight="1"
-              android:text="Manage Product"
+              android:text="Quản lí sản phẩm"
               android:textColor="#262626"
               android:textSize="16sp" />
         </LinearLayout>
@@ -218,7 +218,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
-              android:text="Contact Us"
+              android:text="Liên hệ chúng tôi"
               android:textColor="#262626"
               android:textSize="16sp" />
         </LinearLayout>
@@ -247,7 +247,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
-              android:text="General"
+              android:text="Chung"
               android:textColor="#515151"
               android:textSize="16sp" />
         </LinearLayout>
@@ -274,7 +274,7 @@
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:layout_marginLeft="10dp"
-              android:text="Logout"
+              android:text="Đăng xuất"
               android:textColor="#262626"
               android:textSize="16sp" />
         </LinearLayout>

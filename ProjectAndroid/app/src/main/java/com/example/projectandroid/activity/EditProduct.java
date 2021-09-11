@@ -86,10 +86,10 @@ public class EditProduct extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         if(response.trim().equals("success")){
-                            Toast.makeText(EditProduct.this, "Edit Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditProduct.this, "Sửa thành công", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(EditProduct.this,ManagerProduct.class));
                         }else{
-                            Toast.makeText(EditProduct.this,"Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditProduct.this,"Sửa thất bại",Toast.LENGTH_SHORT).show();
 
                         }
 

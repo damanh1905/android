@@ -60,7 +60,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20sp"
-                            android:text="Manager Product"
+                            android:text="Quản Lí Sản Phẩm"
                             android:textColor="@color/common_google_signin_btn_text_dark_focused"
                             android:textSize="26sp"
                             android:textStyle="bold" />
@@ -87,7 +87,7 @@
                     android:id="@+id/textView6"
                     android:layout_width="270sp"
                     android:layout_height="wrap_content"
-                    android:text="List Product"
+                    android:text="Danh Sách Sản Phẩm"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="24sp" />
 
