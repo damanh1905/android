@@ -42,8 +42,8 @@ public class DienThoaiAdapter extends BaseAdapter {
     }
 
     public class ViewHoder {
-        ImageView imgTraiCay;
-        TextView txtTenTraiCay, txtGiaTraiCay,txtMotaTraiCay;
+        ImageView imgDienThoai;
+        TextView txtTenDienThoai, txtGiaDienThoai, txtMotaDienThoai;
     }
 
     @Override
@@ -52,11 +52,11 @@ public class DienThoaiAdapter extends BaseAdapter {
         if(view ==null){
             viewHoder= new ViewHoder();
             LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view=inflater.inflate(R.layout.dong_traicay,null);
-            viewHoder.imgTraiCay = view.findViewById(R.id.imgTraiCay);
-            viewHoder.txtTenTraiCay = view.findViewById(R.id.txtTenTraiCay);
-            viewHoder.txtGiaTraiCay = view.findViewById(R.id.txtGiaTraiCay);
-            viewHoder.txtMotaTraiCay = view.findViewById(R.id.txtMotaTraiCay);
+            view=inflater.inflate(R.layout.dong_dienthoai,null);
+            viewHoder.imgDienThoai = view.findViewById(R.id.imgDienThoai);
+            viewHoder.txtTenDienThoai = view.findViewById(R.id.txtTenDienThoai);
+            viewHoder.txtGiaDienThoai = view.findViewById(R.id.txtGiaDienThoai);
+            viewHoder.txtMotaDienThoai = view.findViewById(R.id.txtMotaDienThoai);
             view.setTag(viewHoder);
 
         }else {
@@ -64,18 +64,18 @@ public class DienThoaiAdapter extends BaseAdapter {
 
         }
         Sanpham sanpham= sanphamArrayList.get(i);
-        viewHoder.txtTenTraiCay.setText(sanpham.getTensanpham());
-        viewHoder.txtMotaTraiCay.setMaxLines(2);
-        viewHoder.txtMotaTraiCay.setEllipsize(TextUtils.TruncateAt.END);
-        viewHoder.txtMotaTraiCay.setText(sanpham.getMotasanpham());
+        viewHoder.txtTenDienThoai.setText(sanpham.getTensanpham());
+        viewHoder.txtMotaDienThoai.setMaxLines(2);
+        viewHoder.txtMotaDienThoai.setEllipsize(TextUtils.TruncateAt.END);
+        viewHoder.txtMotaDienThoai.setText(sanpham.getMotasanpham());
         Locale localeVN = new Locale("vi", "VN");
         NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
         String str1 = currencyVN.format( Integer.parseInt(sanpham.getGia()));
-        viewHoder.txtGiaTraiCay.setText(str1);
+        viewHoder.txtGiaDienThoai.setText(str1);
         Picasso.with(context).load(sanpham.getHinhanhsanpham())
                 .placeholder(R.drawable.noimage)
                 .error(R.drawable.error)
-                .into(viewHoder.imgTraiCay);
+                .into(viewHoder.imgDienThoai);
 
         return view;
     }

@@ -44,10 +44,10 @@ public class    DienThoaiActivity extends AppCompatActivity {
     private int page = 1;
     Toolbar toolbar;
     Boolean isLoading = false;
-    ListView lvtraiCay;
+    ListView lvDienThoai;
     SearchView searchView;
     DienThoaiAdapter dienThoaiAdapter;
-    ArrayList<Sanpham> traiCays;
+    ArrayList<Sanpham> DienThoais;
     View footerview;
     mHanler mHanler;
     boolean limitData = false;
@@ -99,13 +99,13 @@ public class    DienThoaiActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 ArrayList<Sanpham> lisSearch=new ArrayList<Sanpham>();
-                for (Sanpham sanpham:traiCays){
+                for (Sanpham sanpham:DienThoais){
                     if(sanpham.getTensanpham().toLowerCase().contains(newText.toLowerCase())){
                         lisSearch.add(sanpham);
                     }
                 }
                 dienThoaiAdapter =new DienThoaiAdapter(DienThoaiActivity.this,lisSearch);
-                lvtraiCay.setAdapter(dienThoaiAdapter);
+                lvDienThoai.setAdapter(dienThoaiAdapter);
                 return false;
             }
         });
@@ -113,16 +113,16 @@ public class    DienThoaiActivity extends AppCompatActivity {
     }
 
     private void LoadMoreData() {
-        lvtraiCay.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvDienThoai.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(), ChiTietSanPhamActivity.class);
 
-                intent.putExtra("thongtinsanpham", traiCays.get(i));
+                intent.putExtra("thongtinsanpham", DienThoais.get(i));
                 startActivity(intent);
             }
         });
-        lvtraiCay.setOnScrollListener(new AbsListView.OnScrollListener() {
+        lvDienThoai.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView absListView, int i) {
 
@@ -147,7 +147,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
             public void onResponse(String response) {
 
                 if (response != null && response.length() != 2) {
-                    lvtraiCay.removeFooterView(footerview);
+                    lvDienThoai.removeFooterView(footerview);
 
                     try {
                         JSONArray jsonArray = new JSONArray(response);
@@ -161,7 +161,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
                             String motasanpham = jsonObject.getString("mota");
                             int idloaisp = jsonObject.getInt("idloaisp");
                             Sanpham sanpham = new Sanpham(id, tensanpham, String.valueOf(gia), hinhanhsanpham, motasanpham, idloaisp);
-                            traiCays.add(sanpham);
+                            DienThoais.add(sanpham);
                             dienThoaiAdapter.notifyDataSetChanged();
                         }
 
@@ -171,7 +171,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
                     }
                 } else {
                     limitData = true;
-                    lvtraiCay.removeFooterView(footerview);
+                    lvDienThoai.removeFooterView(footerview);
                     CheckConnection.ShowToast_short(getApplicationContext(), "Đã hết dữ liệu");
                 }
             }
@@ -193,12 +193,12 @@ public class    DienThoaiActivity extends AppCompatActivity {
     }
 
     private void AnhXa() {
-        toolbar = findViewById(R.id.toolbarTraiCay);
-        lvtraiCay = findViewById(R.id.lvtraiCay);
-        traiCays = new ArrayList<>();
+        toolbar = findViewById(R.id.toolbarDienThoai);
+        lvDienThoai = findViewById(R.id.lvDienThoai);
+        DienThoais = new ArrayList<>();
 searchView=(SearchView)findViewById(R.id.productSearch);
-        dienThoaiAdapter = new DienThoaiAdapter(DienThoaiActivity.this, traiCays);
-        lvtraiCay.setAdapter(dienThoaiAdapter);
+        dienThoaiAdapter = new DienThoaiAdapter(DienThoaiActivity.this, DienThoais);
+        lvDienThoai.setAdapter(dienThoaiAdapter);
         dienThoaiAdapter.notifyDataSetChanged();
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         footerview = inflater.inflate(R.layout.processbar, null);
@@ -226,7 +226,7 @@ searchView=(SearchView)findViewById(R.id.productSearch);
         public void handleMessage(@NonNull Message msg) {
             switch (msg.what) {
                 case 0:
-                    lvtraiCay.addFooterView(footerview);
+                    lvDienThoai.addFooterView(footerview);
                     break;
                 case 1:
                     GetData(++page);

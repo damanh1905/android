@@ -9,7 +9,7 @@
     tools:context=".activity.DienThoaiActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTraiCay"
+        android:id="@+id/toolbarDienThoai"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/themeColor"
@@ -26,7 +26,7 @@
         android:iconifiedByDefault="false"
         android:queryHint="tìm kiếm"/>
     <ListView
-        android:id="@+id/lvtraiCay"
+        android:id="@+id/lvDienThoai"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
