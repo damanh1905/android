@@ -95,7 +95,7 @@ public class LaptopActivity extends AppCompatActivity {
     mHanler = new mHanler();
 }
     private void GetIDLoaiSP() {
-        idlaptop= getIntent().getIntExtra("idRau", 7);
+        idlaptop= getIntent().getIntExtra("idLaptop", 7);
     }
     public void initSearchwidgets(){
 
@@ -132,7 +132,7 @@ public class LaptopActivity extends AppCompatActivity {
     }
     private void GetData(int page) {
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanTraiCay + String.valueOf(page), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanThietbi + String.valueOf(page), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

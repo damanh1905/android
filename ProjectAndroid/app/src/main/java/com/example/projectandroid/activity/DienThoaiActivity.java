@@ -40,7 +40,7 @@ import java.util.Map;
 
 
 public class    DienThoaiActivity extends AppCompatActivity {
-    private int idTraiCay = 6;
+    private int idDienthoai = 6;
     private int page = 1;
     Toolbar toolbar;
     Boolean isLoading = false;
@@ -142,7 +142,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
 
     private void GetData(int page) {
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanTraiCay + String.valueOf(page), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanThietbi + String.valueOf(page), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -184,7 +184,7 @@ public class    DienThoaiActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> param = new HashMap<>();
-                param.put("idloaisp", String.valueOf(idTraiCay));
+                param.put("idloaisp", String.valueOf(idDienthoai));
                 return param;
             }
         };
@@ -207,7 +207,7 @@ searchView=(SearchView)findViewById(R.id.productSearch);
     }
 
     private void GetIDLoaiSP() {
-        idTraiCay = getIntent().getIntExtra("idTraicay", 7);
+        idDienthoai = getIntent().getIntExtra("idDienthoai", 7);
     }
 
     private void ActionToolbar() {

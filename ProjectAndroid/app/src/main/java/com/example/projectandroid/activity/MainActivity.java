@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
                             Intent intent = new Intent(MainActivity.this, DienThoaiActivity.class);
-                            intent.putExtra("idTraicay", 1);
+                            intent.putExtra("idDienthoai", 1);
                             startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "vui lòng kiểm tra kết nối", Toast.LENGTH_SHORT).show();
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
                             Intent intent = new Intent(MainActivity.this, LaptopActivity.class);
-                            intent.putExtra("idRau", 2);
+                            intent.putExtra("idLaptop", 2);
                             startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "vui lòng kiểm tra kết nối", Toast.LENGTH_SHORT).show();
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                         if (CheckConnection.haveNetworkConnection(getApplicationContext())) {
                             Intent intent = new Intent(MainActivity.this, Map.class);
-                            intent.putExtra("idCu", 3);
+                            
                             startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "vui lòng kiểm tra kết nối", Toast.LENGTH_SHORT).show();
